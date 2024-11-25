@@ -88,7 +88,7 @@
     
     <div class="contact">
         <h2>Call Us: +91-7036310667 / +91-9493715679</h2>
-        <h3>Our Office Location: Hyderabad</h3>
+        <h3>Office Location: Hyderabad</h3>
     </div>
 
     <div class="footer">

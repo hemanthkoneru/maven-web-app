@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hemanth's Jenkins Training</title>
+    <title>Hemanth's DevOps Training</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -78,7 +78,7 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to Hemanth's Jenkins Training</h1>
+    <h1>Welcome to Hemanth's DevOps Training</h1>
     
     <p>
         <a href="https://hemanthkoneru.com/Online-training-schedules" target="_blank">
@@ -87,8 +87,8 @@
     </p>
     
     <div class="contact">
-        <h2>Call Us: +91-7036310667 / +91-9493715679</h2>
-        <h3>Our Office Location: Hyderabad</h3>
+        <h2>Call Us: +91-7036310667 / +91-9493715679 / +91-6302693454</h2>
+        <h3>Office Location: Hyderabad</h3>
     </div>
 
     <div class="footer">

@@ -1,13 +1,36 @@
-node {
-    def mvnPath
+pipeline {
+    agent any
+
+    stages {
+        stage('GIT Repo Clone') {
+            steps {
+                git credentialsId: 'git-credentials', url: 'https://github.com/hemanthkoneru/maven-web-app.git'
+            }
+        }
+        
+        stage('Maven Build') {
+            steps {
+                script {
+                    // Use the correct name from Global Tool Configuration
+                    def mavenHome = tool name: "maven-3.9.9", type: "maven"
+                    def mavenCMD = "${mavenHome}/bin/mvn"
+                    sh "${mavenCMD} clean package"
+                }
+            }
+        }
     
-    stage('git clone') {
-        git 'https://github.com/ashokitschool/maven-web-app.git'
+        stage('Deploy to Tomcat') {
+            steps {
+                sshagent(['Tomcat_Server_Cred']) {
+                    script {
+                        // Add the remote server's SSH key to known_hosts
+                        sh 'ssh-keyscan -H 172.31.87.165 >> ~/.ssh/known_hosts'
+                    
+                        // Deploy the WAR file to Tomcat
+                        sh 'scp target/maven-web-app.war ec2-user@172.31.87.165:/opt/tomcat/webapps'
+                    }
+                }
+            }
+        }
     }
-    
-    stage('Maven build'){
-        def mvnHome = tool name:'maven', type:"maven";
-        mvnPath = "${mvnHome}/bin/mvn";
-        sh "${mvnPath} clean package"
-    }    
 }

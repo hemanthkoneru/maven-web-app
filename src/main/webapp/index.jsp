@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hemanth's Jenkins Training</title>
+    <title>Hemanth Koneru's Jenkins Training</title>
     <style>
         body {
             font-family: Arial, sans-serif;
